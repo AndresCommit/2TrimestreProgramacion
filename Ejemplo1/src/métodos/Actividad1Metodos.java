@@ -18,10 +18,10 @@ public class Actividad1Metodos {
 	}
 
 	// dividir dos números
-	public static double dividir(double a, double b) {
-		if (b == 0) {
+	public static double dividir(double num1, double num2) {
+		if (num2 == 0) {
 			System.out.println("No se puede dividir por cero.");
 		}
-		return a / b;
+		return num1 / num2;
 	}
 }

@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Figura {
 
 	// atributos
-	private float lado1, lado2;
+	private float lado1, lado2, lado3;
 	private float area, perimetro, baseT, alturaT;
 
 	// métodos
@@ -16,6 +16,13 @@ public class Figura {
 		lado1 = teclado.nextFloat();
 		System.out.println("Inserte la longitud del lado 2");
 		lado2 = teclado.nextFloat();
+	}
+	void pedirDatosTriangulo() {
+		Scanner teclado = new Scanner(System.in);
+		System.out.println("Inserte la base del triángulo");
+		baseT = teclado.nextFloat();
+		System.out.println("Inserte la altura del triángulo");
+		alturaT = teclado.nextFloat();
 	}
 
 	void calcularArea() {
@@ -81,6 +88,10 @@ public class Figura {
 		float perimetro = lado1 + lado1 + lado2 + lado2;
 
 	}
+	void calcularPerimetroTriangulo() {
+		float perimetro = baseT + alturaT+alturaT;
+
+	}
 
 	void elegirOperacion() {
 		Scanner teclado = new Scanner(System.in);
@@ -91,6 +102,30 @@ public class Figura {
 		}
 		if (elegir == 2) {
 			calcularPerimetro();
+		}
+	}
+	void elegirOperacionTriangulo() {
+		Scanner teclado = new Scanner(System.in);
+		System.out.println("Pulsa 1 para calcular el área y 2 para calcular el perímetro de la figura");
+		int elegir = teclado.nextInt();
+		if (elegir == 1) {
+			calcularAreaTriangulo();
+		}
+		if (elegir == 2) {
+			calcularPerimetroTriangulo();
+		}
+	}
+	void elegirFigura() {
+		Scanner teclado = new Scanner(System.in);
+		System.out.println("Pulsa 1 para elegir el triángulo y 2 para elegir el cuadrado");
+		int elegir = teclado.nextInt();
+		if (elegir == 1) {
+			pedirDatosTriangulo();
+			elegirOperacionTriangulo();
+		}
+		if (elegir == 2) {
+			pedirDatos();
+			elegirOperacion();
 		}
 	}
 }
